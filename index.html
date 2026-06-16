@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LUMO Studio — Creative Solutions Demo</title>
-  <meta name="description" content="Demo website concept for LUMO Studio: portfolio, brands, creative services, and contact." />
+  <title>LUMO Studio — Behance Gallery Demo</title>
+  <meta name="description" content="Demo portfolio website concept for LUMO Studio using selected public Behance work from Brendon Wesley's profile." />
   <link rel="icon" href="assets/favicon.png" />
   <style>
     :root {
@@ -61,14 +61,14 @@
     .nav {
       width: min(var(--max), calc(100% - 44px));
       margin: 22px auto 0;
-      height: 76px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
       border: 1px solid rgba(255,255,255,.72);
       border-radius: 999px;
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.88);
       backdrop-filter: blur(18px);
       box-shadow: 0 12px 40px rgba(0, 32, 98, .08);
       position: sticky;
@@ -146,7 +146,7 @@
     }
     .dot { color: var(--yellow); }
     .hero p {
-      max-width: 530px;
+      max-width: 550px;
       color: rgba(255,255,255,.78);
       font-size: 18px;
       line-height: 1.68;
@@ -230,11 +230,23 @@
       position: absolute; left: 34px; top: -38px; width: 92px; height: 52px; border-radius: 20px 20px 10px 10px; background: #101a34;
     }
     .camera::after {
-      content: "SONY";
-      position: absolute; right: 36px; top: 28px; color: rgba(255,255,255,.72); font-size: 15px; letter-spacing: .12em; font-weight: 900;
+      content: "STUDIO";
+      position: absolute; right: 28px; top: 28px; color: rgba(255,255,255,.72); font-size: 14px; letter-spacing: .12em; font-weight: 900;
     }
     .lens { position: absolute; left: 56px; top: 44px; width: 122px; height: 122px; border-radius: 50%; background: radial-gradient(circle at 42% 38%, #35c5ff 0 10%, #06153a 24%, #07101f 45%, #000 70%); border: 16px solid #02060f; box-shadow: inset 0 0 0 10px #14275d, 0 10px 30px rgba(0,0,0,.3); }
     .accent-orb { position: absolute; right: 72px; bottom: 90px; width: 96px; height: 96px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 70px rgba(255,234,0,.4); }
+    .hero-mini-card {
+      position: absolute;
+      left: 62px;
+      top: 78px;
+      width: 158px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 30px 50px rgba(0,0,0,.24);
+      transform: rotate(-8deg);
+      background: white;
+    }
+    .hero-mini-card img { width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; }
     .scroll-note { position: absolute; right: 32px; bottom: 32px; writing-mode: vertical-rl; text-transform: uppercase; letter-spacing: .2em; font-size: 10px; font-weight: 900; color: rgba(255,255,255,.7); }
     .scroll-note::after { content: ""; display: inline-block; height: 48px; width: 1px; margin-top: 12px; background: rgba(255,255,255,.5); }
 
@@ -261,26 +273,169 @@
     }
     .filter-pill .symbol { width: 30px; height: 30px; border-radius: 50%; border: 1px dashed var(--blue-700); display: grid; place-items: center; }
 
-    .portfolio-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
-    .portfolio-card {
-      min-height: 240px;
+    .portfolio-showcase {
+      padding: 56px;
+      border-radius: 44px;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(255,234,0,.18), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.68));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.9);
+    }
+    .portfolio-head {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 46px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .portfolio-head h2 { margin-bottom: 16px; }
+    .profile-card {
+      background: var(--blue-700);
+      color: white;
+      border-radius: 28px;
+      padding: 26px;
+      min-height: 180px;
       position: relative;
       overflow: hidden;
-      border-radius: 18px;
+    }
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -50px;
+      bottom: -58px;
+      border-radius: 50%;
+      background: var(--yellow);
+      opacity: .95;
+    }
+    .profile-card strong { display: block; font-size: 26px; line-height: 1.05; margin-bottom: 12px; position: relative; z-index: 2; }
+    .profile-card span { display: block; color: rgba(255,255,255,.72); line-height: 1.5; position: relative; z-index: 2; }
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .profile-stat {
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255,255,255,.07);
+    }
+    .profile-stat b { display: block; font-size: 18px; }
+    .profile-stat small { color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .12em; font-weight: 850; font-size: 9px; }
+    .gallery-tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      margin: 0 0 22px;
+    }
+    .filter-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .gallery-filter {
+      border: 1px solid #bacaf0;
+      color: var(--blue-700);
+      background: white;
+      border-radius: 999px;
+      padding: 11px 15px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 11px;
+      font-weight: 950;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .gallery-filter:hover { transform: translateY(-2px); }
+    .gallery-filter.active { background: var(--blue-700); color: white; border-color: var(--blue-700); }
+    .source-link { color: var(--blue-700); font-size: 12px; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 220px;
+      gap: 18px;
+    }
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
       background: #0a2a73;
       box-shadow: 0 18px 46px rgba(5, 35, 109, .14);
       isolation: isolate;
+      min-height: 220px;
+      transform: translateZ(0);
     }
-    .portfolio-card.large { min-height: 330px; }
-    .portfolio-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: -2; transition: transform .4s ease; }
-    .portfolio-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 28%, rgba(0,15,55,.88) 100%); z-index: -1; }
-    .portfolio-card:hover img { transform: scale(1.06); }
-    .card-label { position: absolute; left: 24px; bottom: 22px; color: white; }
-    .card-label h3 { margin: 0 0 4px; text-transform: uppercase; letter-spacing: .07em; font-size: 20px; }
-    .card-label span { text-transform: uppercase; letter-spacing: .16em; font-size: 10px; font-weight: 900; color: rgba(255,255,255,.68); }
-    .portfolio-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .portfolio-stack .portfolio-card { min-height: 240px; }
-    .portfolio-stack .portfolio-card:first-child { grid-column: span 2; min-height: 250px; }
+    .work-card.featured { grid-column: span 2; grid-row: span 2; }
+    .work-card.wide { grid-column: span 2; }
+    .work-card.tall { grid-row: span 2; }
+    .work-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      transition: transform .5s ease, filter .5s ease;
+    }
+    .work-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(67,181,223,.24), transparent 25%),
+        linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(2,8,23,.88) 100%);
+      z-index: -1;
+    }
+    .work-card::after {
+      content: "View Project";
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      background: rgba(255,255,255,.94);
+      color: var(--blue-700);
+      border-radius: 999px;
+      padding: 10px 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 10px;
+      font-weight: 950;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .work-card:hover img { transform: scale(1.08); filter: saturate(1.12) contrast(1.04); }
+    .work-card:hover::after { transform: translateY(0); opacity: 1; }
+    .work-meta {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      color: white;
+    }
+    .work-meta h3 {
+      margin: 0 0 8px;
+      font-size: clamp(18px, 2.2vw, 28px);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+    .work-meta span {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,234,0,.95);
+      color: var(--blue-900);
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: 10px;
+      font-weight: 950;
+    }
+    .work-card.is-hidden { display: none; }
+    .image-error img { display: none; }
+    .image-error { background: linear-gradient(135deg, var(--blue-700), var(--sky)); }
 
     .brands-panel {
       padding: 58px;
@@ -303,6 +458,7 @@
       text-align: center;
       text-transform: uppercase;
       transition: transform .2s ease, box-shadow .2s ease;
+      padding: 18px;
     }
     .brand-tile small { display: block; margin-top: 5px; color: #7890b4; font-size: 10px; letter-spacing: .2em; }
     .brand-tile:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(5, 35, 109, .11); }
@@ -390,6 +546,10 @@
     .socials { display: flex; gap: 12px; }
     .socials a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); display: grid; place-items: center; color: rgba(255,255,255,.8); font-size: 12px; font-weight: 900; }
 
+    @media (max-width: 1100px) {
+      .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .work-card.featured { grid-column: span 2; }
+    }
     @media (max-width: 980px) {
       .nav { border-radius: 28px; height: auto; min-height: 72px; flex-wrap: wrap; }
       .mobile-toggle { display: inline-flex; }
@@ -397,9 +557,10 @@
       .nav.open .nav-links { display: flex; }
       .hero { grid-template-columns: 1fr; padding: 44px 28px; min-height: auto; }
       .hero-visual { min-height: 480px; }
-      .section-grid, .contact, .split-feature { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .brands-panel { padding: 34px; }
+      .section-grid, .contact, .split-feature, .portfolio-head { grid-template-columns: 1fr; }
+      .brands-panel, .portfolio-showcase { padding: 34px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .work-card.featured, .work-card.wide { grid-column: span 2; }
     }
 
     @media (max-width: 680px) {
@@ -408,11 +569,14 @@
       h1 { font-size: 58px; }
       .stage { height: 430px; }
       .monitor { width: 252px; height: 174px; right: 24px; }
+      .hero-mini-card { left: 28px; top: 58px; width: 124px; }
       .camera { transform: scale(.82); transform-origin: left bottom; left: 18px; }
       .accent-orb { width: 76px; height: 76px; }
-      .portfolio-stack, .brand-grid { grid-template-columns: 1fr; }
-      .portfolio-stack .portfolio-card:first-child { grid-column: auto; }
-      .brands-panel, .feature-copy, .contact-card, .form { padding: 28px; }
+      .brand-grid { grid-template-columns: 1fr; }
+      .gallery-grid { display: block; }
+      .work-card, .work-card.featured, .work-card.wide, .work-card.tall { height: 300px; margin-bottom: 16px; }
+      .brands-panel, .portfolio-showcase, .feature-copy, .contact-card, .form { padding: 28px; }
+      .profile-stats { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -427,7 +591,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#home" class="active">Home</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#brands">Brands We Work With</a>
+        <a href="#brands">Creative Scope</a>
         <a href="#contact">Contact Us</a>
       </nav>
       <button class="mobile-toggle" aria-label="Open menu" onclick="document.getElementById('topNav').classList.toggle('open')"><span></span></button>
@@ -436,21 +600,22 @@
     <main id="home" class="hero">
       <div class="hero-copy">
         <div class="eyebrow">LUMO Studio</div>
-        <h1>Creative<br />Solutions<span class="dot">.</span></h1>
-        <p>Brand-led design, motion graphics, video production, and digital campaigns built to make every launch feel sharper, cleaner, and more memorable.</p>
+        <h1>Creative<br />Portfolio<span class="dot">.</span></h1>
+        <p>A polished agency-style demo site that blends LUMO’s blue/yellow identity with a live gallery direction built around Brendon Wesley’s public Behance portfolio.</p>
         <ul class="hero-services">
           <li>Graphic Design</li>
-          <li>Motion Graphics</li>
-          <li>Videography</li>
-          <li>Video Editing</li>
+          <li>Brand Identity</li>
+          <li>Social Campaigns</li>
+          <li>UI Concepts</li>
         </ul>
         <div class="actions">
-          <a class="btn primary" href="#portfolio">View Our Work →</a>
-          <a class="btn secondary" href="#contact">Get In Touch</a>
+          <a class="btn primary" href="#portfolio">View Portfolio →</a>
+          <a class="btn secondary" href="#contact">Start A Project</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="stage">
+          <div class="hero-mini-card"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/cbb0a0227065101.Y3JvcCwzMjQwLDI1MzQsMCww.jpg" alt="" /></div>
           <div class="monitor"><img src="assets/lumo-logo-white.png" alt="" /></div>
           <div class="camera"><div class="lens"></div></div>
           <div class="accent-orb"></div>
@@ -459,59 +624,104 @@
       </div>
     </main>
 
-    <section id="portfolio" class="section-grid">
-      <div class="section-intro">
-        <div class="section-kicker">Our Work</div>
-        <h2>Portfolio</h2>
-        <p class="section-copy">A selection of campaign concepts across brand identity, motion, video, and launch content. The layout keeps the second reference’s clean gallery structure, but uses fresh cards and LUMO’s palette.</p>
-        <a class="filter-pill" href="#contact"><span class="symbol">✣</span> All Projects</a>
-      </div>
-      <div class="portfolio-grid">
-        <a class="portfolio-card large" href="#contact" aria-label="Brand film project">
-          <img src="assets/portfolio-brand-film.svg" alt="Abstract blue brand film project visual" />
-          <div class="card-label"><h3>Fesco Energy</h3><span>Brand Video</span></div>
-        </a>
-        <div class="portfolio-stack">
-          <a class="portfolio-card" href="#contact" aria-label="Identity system project">
-            <img src="assets/portfolio-identity.svg" alt="Abstract identity system project visual" />
-            <div class="card-label"><h3>Enersave</h3><span>Branding</span></div>
-          </a>
-          <a class="portfolio-card" href="#contact" aria-label="Motion graphics project">
-            <img src="assets/portfolio-motion.svg" alt="Abstract motion graphics project visual" />
-            <div class="card-label"><h3>Panoptica</h3><span>Motion Graphics</span></div>
-          </a>
-          <a class="portfolio-card" href="#contact" aria-label="Corporate video project">
-            <img src="assets/portfolio-corporate.svg" alt="Abstract corporate video project visual" />
-            <div class="card-label"><h3>UDC</h3><span>Corporate Video</span></div>
-          </a>
-          <a class="portfolio-card" href="#contact" aria-label="Campaign project">
-            <img src="assets/portfolio-campaign.svg" alt="Abstract campaign project visual" />
-            <div class="card-label"><h3>Real Estate</h3><span>Social Campaign</span></div>
-          </a>
+    <section id="portfolio" class="portfolio-showcase">
+      <div class="portfolio-head">
+        <div>
+          <div class="section-kicker">Selected Work</div>
+          <h2>Behance Gallery</h2>
+          <p class="section-copy">This replaces the placeholder portfolio with actual public project cards from the Behance profile. The second reference stays as the strongest visual influence: clean white space, strong blue type, rounded cards, and a premium gallery layout.</p>
         </div>
+        <aside class="profile-card" aria-label="Behance profile summary">
+          <strong>Brendon Wesley</strong>
+          <span>Digital marketer / graphic designer based in Kingston, Jamaica.</span>
+          <div class="profile-stats">
+            <div class="profile-stat"><b>6.7k</b><small>Views</small></div>
+            <div class="profile-stat"><b>206</b><small>Likes</small></div>
+            <div class="profile-stat"><b>66</b><small>Followers</small></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="gallery-tools">
+        <div class="filter-buttons" aria-label="Portfolio filters">
+          <button class="gallery-filter active" data-filter="all" type="button">All</button>
+          <button class="gallery-filter" data-filter="social" type="button">Social</button>
+          <button class="gallery-filter" data-filter="identity" type="button">Identity</button>
+          <button class="gallery-filter" data-filter="campaign" type="button">Campaign</button>
+          <button class="gallery-filter" data-filter="ui" type="button">UI</button>
+        </div>
+        <a class="source-link" href="https://www.behance.net/MrWesley" target="_blank" rel="noopener">View Behance Source →</a>
+      </div>
+
+      <div class="gallery-grid">
+        <a class="work-card featured" data-category="social campaign" href="https://www.behance.net/gallery/227065101/Social-Media-Posts" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/cbb0a0227065101.Y3JvcCwzMjQwLDI1MzQsMCww.jpg" alt="Social Media Posts project" />
+          <div class="work-meta"><h3>Social Media Posts</h3><span>Social Campaign</span></div>
+        </a>
+        <a class="work-card wide" data-category="social campaign" href="https://www.behance.net/gallery/214388761/Social-Media-Layout" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/21603f214388761.Y3JvcCw3ODksNjE3LDAsMzY3.jpg" alt="Social Media Layout project" />
+          <div class="work-meta"><h3>Social Media Layout</h3><span>Gaming Content</span></div>
+        </a>
+        <a class="work-card" data-category="social campaign" href="https://www.behance.net/gallery/197197091/Corporate-Social-Media" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/582cfa197197091.Y3JvcCw2MDQsNDcyLDQ3NCwyNTE.jpg" alt="Corporate Social Media project" />
+          <div class="work-meta"><h3>Corporate Social Media</h3><span>Corporate</span></div>
+        </a>
+        <a class="work-card" data-category="social campaign" href="https://www.behance.net/gallery/228285877/Social-Media-Posts-2" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/9a8189228285877.Y3JvcCwzMjQwLDI1MzQsMCww.jpg" alt="Social Media Posts 2 project" />
+          <div class="work-meta"><h3>Social Media Posts 2</h3><span>Social System</span></div>
+        </a>
+        <a class="work-card tall" data-category="identity" href="https://www.behance.net/gallery/206720425/Montego-Bay-United-REBRAND" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/b08d07206720425.Y3JvcCwyMjAzLDE3MjMsMjEyLDMxNg.jpg" alt="Montego Bay United rebrand project" />
+          <div class="work-meta"><h3>Montego Bay United</h3><span>Rebrand</span></div>
+        </a>
+        <a class="work-card" data-category="ui identity" href="https://www.behance.net/gallery/164784935/Thick-Chicken-UI-Design" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/85a176164784935.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpg" alt="Thick Chicken UI Design project" />
+          <div class="work-meta"><h3>Thick Chicken</h3><span>UI Design</span></div>
+        </a>
+        <a class="work-card" data-category="campaign" href="https://www.behance.net/gallery/97594043/Covid-19" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/03436797594043.Y3JvcCwxMDgwLDg0NCwwLDEzNg.jpg" alt="Covid-19 project" />
+          <div class="work-meta"><h3>Covid-19</h3><span>Public Update</span></div>
+        </a>
+        <a class="work-card wide" data-category="campaign" href="https://www.behance.net/gallery/97593865/Jamaica-Moves" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/066d6c97593865.Y3JvcCwxOTk5LDE1NjQsMCw0.jpg" alt="Jamaica Moves project" />
+          <div class="work-meta"><h3>Jamaica Moves</h3><span>Event Campaign</span></div>
+        </a>
+        <a class="work-card" data-category="campaign" href="https://www.behance.net/gallery/120762917/Pringles-Proposal" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/0e7c49120762917.Y3JvcCw4ODcsNjkzLDEwNSwzMzU.jpg" alt="Pringles Proposal project" />
+          <div class="work-meta"><h3>Pringles Proposal</h3><span>Product Concept</span></div>
+        </a>
+        <a class="work-card" data-category="identity" href="https://www.behance.net/gallery/85889307/AURA" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/dbe0f885889307.Y3JvcCwxMDgxLDg0NSwwLDEyOA.jpg" alt="AURA project" />
+          <div class="work-meta"><h3>AURA</h3><span>Logo System</span></div>
+        </a>
+        <a class="work-card" data-category="campaign" href="https://www.behance.net/gallery/84140465/Events-Flyer" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/e0bc0784140465.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpg" alt="Events Flyer project" />
+          <div class="work-meta"><h3>Events Flyer</h3><span>Promo Design</span></div>
+        </a>
+        <a class="work-card" data-category="identity" href="https://www.behance.net/gallery/187699351/REAL-MONA-REBRAND" target="_blank" rel="noopener">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-error')" src="https://mir-s3-cdn-cf.behance.net/projects/404/e2fda0187699351.Y3JvcCwyMzg2LDE4NjYsMzQyLDIwNg.jpg" alt="REAL MONA rebrand project" />
+          <div class="work-meta"><h3>REAL MONA</h3><span>Sports Rebrand</span></div>
+        </a>
       </div>
     </section>
 
     <section id="brands" class="brands-panel section-grid">
       <div class="section-intro">
-        <div class="section-kicker">Collaborations</div>
-        <h2>Brands<br />We Work With</h2>
-        <p class="section-copy">Built for a studio that needs the confidence of a corporate agency site without losing the energy of a creative production house.</p>
+        <div class="section-kicker">Creative Scope</div>
+        <h2>Design<br />Built To Move</h2>
+        <p class="section-copy">This section now supports the portfolio source instead of pretending there are unrelated brand clients. It frames the work by service line and keeps the page honest.</p>
         <a class="filter-pill" href="#contact"><span class="symbol">✣</span> Work With Us</a>
       </div>
       <div>
         <div class="brand-grid">
-          <div class="brand-tile">UDC</div>
-          <div class="brand-tile">FESCO <small>Group</small></div>
-          <div class="brand-tile">Panoptica</div>
-          <div class="brand-tile">Enersave <small>Energy Solutions</small></div>
-          <div class="brand-tile">Real Estate <small>Developers</small></div>
-          <div class="brand-tile">Wenz <small>Group</small></div>
-          <div class="brand-tile">KACE <small>Events</small></div>
-          <div class="brand-tile">Lionhearts <small>Football Club</small></div>
-          <div class="brand-tile">Studio <small>Theater</small></div>
+          <div class="brand-tile">Social Media <small>Posts + Layouts</small></div>
+          <div class="brand-tile">Brand Identity <small>Logos + Systems</small></div>
+          <div class="brand-tile">Campaigns <small>Public + Event</small></div>
+          <div class="brand-tile">Sports Design <small>Crests + Rebrands</small></div>
+          <div class="brand-tile">Product Concepts <small>Packaging + Ads</small></div>
+          <div class="brand-tile">UI Concepts <small>Food + Digital</small></div>
         </div>
-        <p class="quote"><span class="mark">“</span> Great work happens when vision and creativity connect. <span class="mark">”</span></p>
+        <p class="quote"><span class="mark">“</span> Strong visuals first. Clean presentation second. No filler. <span class="mark">”</span></p>
       </div>
     </section>
 
@@ -521,13 +731,13 @@
         <div class="prop-lamp"></div>
       </div>
       <div class="feature-copy">
-        <div class="section-kicker">How We Build</div>
-        <h2>Clean ideas. Sharp execution.</h2>
-        <p class="section-copy">A lighter editorial section brings in the third reference without overpowering the stronger blue agency direction.</p>
+        <div class="section-kicker">How It Presents</div>
+        <h2>Gallery first. Brand frame second.</h2>
+        <p class="section-copy">The site keeps the LUMO identity in the navigation, hero, buttons, and color system. The actual portfolio work gets the visual weight, so the gallery feels like the core of the site instead of a pasted-in image dump.</p>
         <div class="steps">
-          <div class="step"><div class="step-num">1</div><div><h3>Define the story</h3><p>Clarify the message, audience, offer, and visual standard before production starts.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div><h3>Design the system</h3><p>Create the visual language across digital, video, motion, and campaign assets.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div><h3>Launch with polish</h3><p>Package final assets for web, social, presentation, and brand rollouts.</p></div></div>
+          <div class="step"><div class="step-num">1</div><div><h3>Hero establishes LUMO</h3><p>The opening section sells the studio direction and keeps the logo visible without overpowering the work.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Portfolio carries the page</h3><p>The Behance work is shown in a premium masonry-style gallery with real project links.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Service cards add structure</h3><p>The lower section translates the gallery into service categories a client can understand quickly.</p></div></div>
         </div>
       </div>
     </section>
@@ -536,10 +746,10 @@
       <div class="contact-card">
         <div class="section-kicker">Let’s Create</div>
         <h2>Let’s Work<br />Together.</h2>
-        <p class="section-copy">Tell us about your project and let’s bring your ideas to life.</p>
+        <p class="section-copy">Tell us about your project and let’s turn the strongest parts of the portfolio into a clean client-facing site.</p>
         <div class="contact-list">
-          <div class="contact-row"><span class="icon-dot">⌖</span><span>Accra, Ghana</span></div>
-          <div class="contact-row"><span class="icon-dot">☎</span><span>+233 59 143 2314</span></div>
+          <div class="contact-row"><span class="icon-dot">⌖</span><span>Kingston, Jamaica</span></div>
+          <div class="contact-row"><span class="icon-dot">Be</span><span>behance.net/MrWesley</span></div>
           <div class="contact-row"><span class="icon-dot">✉</span><span>hello@lumo.studio</span></div>
         </div>
       </div>
@@ -547,7 +757,7 @@
         <div class="form-title">Send Us A Message</div>
         <div class="field"><input type="text" placeholder="Your Name" required /></div>
         <div class="field"><input type="email" placeholder="Your Email" required /></div>
-        <div class="field"><select required><option value="">Project Type</option><option>Brand Identity</option><option>Video Production</option><option>Motion Graphics</option><option>Campaign Content</option></select></div>
+        <div class="field"><select required><option value="">Project Type</option><option>Brand Identity</option><option>Social Media Campaign</option><option>UI / Website Concept</option><option>Event / Promotional Design</option></select></div>
         <div class="field"><textarea placeholder="Your Message" required></textarea></div>
         <button class="btn blue" type="submit">Send Message →</button>
       </form>
@@ -557,9 +767,9 @@
   <footer>
     <div class="footer-inner">
       <img src="assets/lumo-logo-white.png" alt="LUMO Studio logo" />
-      <p>© 2026 LUMO Studio. Demo concept site.</p>
+      <p>© 2026 LUMO Studio. Demo concept site using public Behance project references.</p>
       <div class="socials" aria-label="Social links">
-        <a href="#home">Be</a><a href="#home">▶</a><a href="#home">in</a>
+        <a href="https://www.behance.net/MrWesley" target="_blank" rel="noopener">Be</a><a href="#home">▶</a><a href="#home">in</a>
       </div>
     </div>
   </footer>
@@ -574,6 +784,19 @@
       });
     }, { rootMargin: '-42% 0px -50% 0px', threshold: 0 });
     sections.forEach(section => observer.observe(section));
+
+    const filters = document.querySelectorAll('.gallery-filter');
+    const cards = document.querySelectorAll('.work-card');
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        const selected = filter.dataset.filter;
+        filters.forEach(item => item.classList.toggle('active', item === filter));
+        cards.forEach(card => {
+          const categories = card.dataset.category || '';
+          card.classList.toggle('is-hidden', selected !== 'all' && !categories.includes(selected));
+        });
+      });
+    });
   </script>
 </body>
 </html>
