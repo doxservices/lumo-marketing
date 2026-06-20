@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Contact LUMO">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#092b68"/><stop offset=".52" stop-color="#0057ff"/><stop offset="1" stop-color="#69d8ff"/></linearGradient>
+    <radialGradient id="orb" cx="72%" cy="18%" r="60%"><stop offset="0" stop-color="#fddb3a" stop-opacity=".9"/><stop offset=".38" stop-color="#fddb3a" stop-opacity=".18"/><stop offset="1" stop-color="#fddb3a" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#00112a" flood-opacity=".42"/></filter>
+  </defs>
+  <rect width="1200" height="700" rx="64" fill="url(#bg)"/>
+  <rect width="1200" height="700" rx="64" fill="url(#orb)"/>
+  <circle cx="990" cy="120" r="78" fill="#fddb3a"/>
+  <circle cx="1056" cy="566" r="180" fill="#ffffff" opacity=".08"/>
+  <g filter="url(#shadow)">
+    <rect x="712" y="150" width="270" height="330" rx="36" fill="#061532"/>
+    <circle cx="848" cy="284" r="94" fill="#020817"/>
+    <circle cx="848" cy="284" r="56" fill="#0f4fb8"/>
+    <circle cx="824" cy="260" r="20" fill="#70ddff"/>
+    <line x1="792" y1="480" x2="696" y2="612" stroke="#061532" stroke-width="22" stroke-linecap="round"/>
+    <line x1="902" y1="480" x2="1012" y2="612" stroke="#061532" stroke-width="22" stroke-linecap="round"/>
+    <line x1="848" y1="480" x2="848" y2="630" stroke="#061532" stroke-width="22" stroke-linecap="round"/>
+    <rect x="148" y="218" width="420" height="318" rx="36" fill="#fff" opacity=".16"/>
+    <rect x="202" y="280" width="248" height="28" rx="14" fill="#fff" opacity=".7"/>
+    <rect x="202" y="344" width="302" height="24" rx="12" fill="#fff" opacity=".42"/>
+    <rect x="202" y="402" width="220" height="24" rx="12" fill="#fff" opacity=".42"/>
+  </g>
+  <g font-family="Montserrat, Arial, sans-serif" fill="#fff">
+    <text x="72" y="98" font-size="32" font-weight="800" letter-spacing="4">CONTACT LUMO</text>
+    <text x="72" y="142" font-size="20" opacity=".74">Production-ready creative support</text>
+  </g>
+</svg>
