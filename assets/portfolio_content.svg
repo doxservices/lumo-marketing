@@ -1,27 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Portfolio Spread">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" role="img" aria-label="Portfolio page artwork">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#092b68"/><stop offset=".52" stop-color="#0057ff"/><stop offset="1" stop-color="#69d8ff"/></linearGradient>
-    <radialGradient id="orb" cx="72%" cy="18%" r="60%"><stop offset="0" stop-color="#fddb3a" stop-opacity=".9"/><stop offset=".38" stop-color="#fddb3a" stop-opacity=".18"/><stop offset="1" stop-color="#fddb3a" stop-opacity="0"/></radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#00112a" flood-opacity=".42"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0059ff"/><stop offset=".5" stop-color="#0078ff"/><stop offset="1" stop-color="#002e98"/></linearGradient>
+    <radialGradient id="glow" cx="67%" cy="42%" r="62%"><stop offset="0" stop-color="#49c8ff" stop-opacity=".55"/><stop offset=".55" stop-color="#0068ff" stop-opacity=".08"/><stop offset="1" stop-color="#001438" stop-opacity="0"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#001438" flood-opacity=".42"/></filter>
   </defs>
-  <rect width="1200" height="700" rx="64" fill="url(#bg)"/>
-  <rect width="1200" height="700" rx="64" fill="url(#orb)"/>
-  <circle cx="990" cy="120" r="78" fill="#fddb3a"/>
-  <circle cx="1056" cy="566" r="180" fill="#ffffff" opacity=".08"/>
-  <g filter="url(#shadow)">
-    <rect x="102" y="176" width="250" height="214" rx="32" fill="#fff" opacity=".95"/>
-    <rect x="398" y="120" width="306" height="248" rx="34" fill="#061532"/>
-    <rect x="746" y="174" width="322" height="302" rx="34" fill="#fff" opacity=".94"/>
-    <rect x="152" y="230" width="150" height="88" rx="22" fill="#0057ff"/>
-    <circle cx="550" cy="244" r="78" fill="#fddb3a"/>
-    <rect x="818" y="240" width="178" height="38" rx="19" fill="#0057ff"/>
-    <rect x="818" y="308" width="138" height="22" rx="11" fill="#061532" opacity=".34"/>
-    <rect x="166" y="430" width="700" height="96" rx="28" fill="#ffffff" opacity=".16"/>
-    <rect x="216" y="462" width="180" height="28" rx="14" fill="#fff" opacity=".7"/>
-    <rect x="430" y="462" width="260" height="28" rx="14" fill="#fff" opacity=".4"/>
-  </g>
+  <rect width="1600" height="780" fill="url(#bg)"/>
+  <rect width="1600" height="780" fill="url(#glow)"/>
+  <rect x="18" y="18" width="1564" height="744" fill="none" stroke="#00337f" stroke-width="2" opacity=".55"/>
   <g font-family="Montserrat, Arial, sans-serif" fill="#fff">
-    <text x="72" y="98" font-size="32" font-weight="800" letter-spacing="4">PORTFOLIO SPREAD</text>
-    <text x="72" y="142" font-size="20" opacity=".74">Packaging, print, motion, video</text>
+    <text x="92" y="190" font-size="15" font-weight="800" letter-spacing="5" opacity=".75">OUR WORK</text>
+    <rect x="92" y="214" width="42" height="4" rx="2" fill="#6fdcff" opacity=".8"/>
+    <text x="92" y="292" font-size="72" font-weight="800" letter-spacing="-3">Portfolio</text>
+    <text x="92" y="360" font-size="18" font-weight="700">A selection of projects across</text>
+    <text x="92" y="395" font-size="18" font-weight="700">design, motion and video.</text>
+    <text x="92" y="430" font-size="18" font-weight="700">Made to inspire and deliver results.</text>
+    <rect x="92" y="510" width="218" height="58" rx="29" fill="none" stroke="#fff" stroke-width="2" opacity=".72"/>
+    <circle cx="126" cy="539" r="19" fill="none" stroke="#fff" opacity=".7"/>
+    <text x="112" y="546" font-size="18" font-weight="800">⌘</text>
+    <text x="164" y="546" font-size="13" font-weight="800" letter-spacing="1.5">ALL PROJECTS</text>
+  </g>
+  <g filter="url(#shadow)" font-family="Montserrat, Arial, sans-serif">
+    <rect x="520" y="86" width="560" height="270" rx="14" fill="#001438"/>
+    <rect x="1108" y="86" width="390" height="270" rx="14" fill="#001438"/>
+    <rect x="520" y="389" width="370" height="286" rx="14" fill="#001438"/>
+    <rect x="920" y="389" width="370" height="286" rx="14" fill="#001438"/>
+    <rect x="1320" y="389" width="178" height="286" rx="14" fill="#001438"/>
+    <g opacity=".95">
+      <circle cx="802" cy="212" r="92" fill="#0a66ff"/><circle cx="850" cy="165" r="140" fill="#6fdcff" opacity=".18"/><rect x="704" y="122" width="112" height="190" rx="38" fill="#0f72ff" transform="rotate(-22 760 217)"/><text x="590" y="306" font-size="30" font-weight="800" fill="#fff">FESCO</text><text x="590" y="330" font-size="10" font-weight="800" fill="#fff" letter-spacing="2" opacity=".65">BRAND VIDEO</text>
+      <path d="M1170 138l210 44 52 130-238-42z" fill="#dff7ff" opacity=".86"/><path d="M1198 160l166 34 24 58-180-36z" fill="#0059ff" opacity=".45"/><text x="1156" y="306" font-size="30" font-weight="800" fill="#fff">ENERSAVE</text><text x="1156" y="330" font-size="10" font-weight="800" fill="#fff" letter-spacing="2" opacity=".65">BRANDING</text>
+      <path d="M608 560c56-76 178-122 244-52 0 0-24 72-124 78-67 4-120-26-120-26z" fill="#0b62ff"/><path d="M600 548c80 32 178 28 248-18" fill="none" stroke="#6fdcff" stroke-width="16" opacity=".8"/><text x="560" y="610" font-size="26" font-weight="800" fill="#fff">PANOPTICA</text><text x="560" y="632" font-size="10" font-weight="800" fill="#fff" letter-spacing="2" opacity=".65">MOTION GRAPHICS</text>
+      <path d="M1005 430h170l74 210h-286z" fill="#253858"/><path d="M1020 455h138l54 162h-244z" fill="#6fdcff" opacity=".28"/><text x="958" y="610" font-size="28" font-weight="800" fill="#fff">UDC</text><text x="958" y="632" font-size="10" font-weight="800" fill="#fff" letter-spacing="2" opacity=".65">CORPORATE VIDEO</text>
+      <rect x="1364" y="430" width="82" height="190" rx="22" fill="#071532"/><rect x="1376" y="455" width="58" height="126" rx="8" fill="#0059ff"/><text x="1348" y="610" font-size="21" font-weight="800" fill="#fff">Real Estate</text><text x="1348" y="632" font-size="10" font-weight="800" fill="#fff" letter-spacing="2" opacity=".65">SOCIAL MEDIA CONTENT</text>
+    </g>
   </g>
 </svg>
