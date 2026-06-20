@@ -4,37 +4,54 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LUMO • Creative Solutions</title>
-  <meta name="description" content="LUMO creative solutions for graphic design, motion graphics, videography, and video editing.">
+  <meta name="description" content="LUMO one-page creative studio site for design, motion graphics, videography, and video editing.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home">
+<body>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a class="nav-brand" href="index.html" aria-label="LUMO home">LUMO<span></span></a>
+    <a class="brand" href="#home" aria-label="LUMO home">
+      <span class="logo-word">LUMO</span><span class="logo-sun"></span><span class="logo-line"></span>
+    </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="brands.html">Brands we work with</a>
-      <a href="contact.html">Contact us</a>
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#brands">Brands we work with</a>
+      <a href="#contact">Contact us</a>
     </div>
   </nav>
 
-  <main class="hero spread">
-    <section class="copy-block">
-      <p class="eyebrow">Creative Studio</p>
-      <h1>Creative<br>Solutions<span class="yellow-dot"></span></h1>
-      <p class="lead">Graphic Design. Motion Graphics. Videography. Video Editing. We bring ideas to life with clarity, creativity, and purpose.</p>
-      <div class="buttons">
-        <a href="portfolio.html" class="btn primary">View our work</a>
-        <a href="contact.html" class="btn secondary">Get in touch</a>
-      </div>
-      <div class="social-icons" aria-label="Social links">
-        <span>IG</span>
-        <span>Be</span>
-        <span>In</span>
-      </div>
+  <main>
+    <section id="home" class="section-panel" aria-label="Creative Solutions">
+      <img class="section-art" src="assets/hero.svg" alt="LUMO creative solutions with camera and laptop">
+      <a class="hotspot work" href="#portfolio" aria-label="View our work"></a>
+      <a class="hotspot contact" href="#contact" aria-label="Get in touch"></a>
     </section>
-    <section class="visual-panel hero-panel" aria-label="LUMO creative tools visual">
-      <img src="assets/hero.svg" alt="Camera, laptop, and creative production equipment">
+
+    <section id="portfolio" class="section-panel" aria-label="Portfolio">
+      <img class="section-art" src="assets/portfolio_content.svg" alt="LUMO portfolio grid with selected projects">
+      <a class="hotspot all-projects" href="#brands" aria-label="Continue to brand partners"></a>
+    </section>
+
+    <section id="brands" class="section-panel" aria-label="Brands we work with">
+      <img class="section-art" src="assets/brands_content.svg" alt="LUMO brand partner logo grid">
+      <a class="hotspot brands-cta" href="#contact" aria-label="Work with us"></a>
+    </section>
+
+    <section id="contact" class="section-panel" aria-label="Contact LUMO">
+      <img class="section-art" src="assets/contact_content.svg" alt="LUMO contact form and camera production visual">
+      <form class="real-contact-form" aria-label="Send us a message">
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name">
+        <input type="email" name="email" placeholder="Your Email" autocomplete="email">
+        <select name="project_type">
+          <option value="">Project Type</option>
+          <option>Graphic Design</option>
+          <option>Motion Graphics</option>
+          <option>Videography</option>
+          <option>Video Editing</option>
+        </select>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="button">SEND MESSAGE</button>
+      </form>
     </section>
   </main>
 </body>
